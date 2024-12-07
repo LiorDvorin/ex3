@@ -135,7 +135,7 @@ int main() {
                 printf("*****************************************\n\n");
                 for(int i = 0 ; i < NUM_OF_BRANDS; i++) {
                     printf("Sales for %s:\n", brands[i]);
-                    if(salesCheck(cube, i, day)) {
+                    if(salesCheck(cube, i, day-1)) {
                         for(int j = 0; j < day; j++) {
                             printf("Day %d- ", j + 1);
                             for(int k = 0; k < NUM_OF_TYPES; k++) {
@@ -173,9 +173,9 @@ int main() {
 int salesCheck(int cube[DAYS_IN_YEAR][NUM_OF_BRANDS][NUM_OF_TYPES], int brand, int day) {
     for(int i = 0; i < NUM_OF_TYPES; i++) {
         if(cube[day][brand][i] == -1)
-            return 1;
+            return 0;
     }
-    return 0;
+    return 1;
 }
 void totalSales(int cube[DAYS_IN_YEAR][NUM_OF_BRANDS][NUM_OF_TYPES], int day) {
     int sum = 0;
