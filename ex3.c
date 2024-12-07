@@ -156,7 +156,10 @@ int main() {
             }
             case deltas: {
                 for(int i = 0 ; i < NUM_OF_BRANDS; i++) {
-                    printf("Brand: %s, Average Delta: %f\n", brands[i], averageDelta(cube, i, day));
+                    if(day == 1)
+                        printf("Brand: %s, Average Delta: %f\n", brands[i], 0);
+                    else
+                        printf("Brand: %s, Average Delta: %f\n", brands[i], averageDelta(cube, i, day));
                 }
                 break;
             }
